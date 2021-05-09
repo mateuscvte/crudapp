@@ -28,6 +28,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Dependences 
-
-# Angular Material UI (Material Design components for Angular)
-# run command "npm install"
+Angular Material UI (Material Design components for Angular)
+run command "npm install"
