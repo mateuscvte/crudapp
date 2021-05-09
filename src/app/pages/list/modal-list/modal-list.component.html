@@ -1,0 +1,49 @@
+<div *ngIf="status === 'add'" class="add">
+    <h3>Adicionar Item</h3>
+    <form [formGroup]="itemForm">
+        <mat-form-field>
+            <mat-label>Nome: </mat-label>
+            <input matInput type="text" placeholder="Insira um nome" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Idade: </mat-label>
+            <input matInput type="number" placeholder="Insira uma idade" formControlName="age">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Telefone: </mat-label>
+            <input matInput type="number" placeholder="Insira um número de telefone" formControlName="phone">
+        </mat-form-field>
+
+        <div class="send">
+            <button mat-raised-button (click)="closeDialog()">Fechar</button>
+            <button type="submit" mat-raised-button color="primary" (click)="sendItem()" [disabled]="itemForm.invalid">Adicionar</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="status === 'edit'" class="edit">
+    <h3>Editar Item</h3>
+    <form [formGroup]="itemForm">
+        <mat-form-field>
+            <mat-label>Nome: </mat-label>
+            <input matInput type="text" placeholder="Insira um nome" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Idade: </mat-label>
+            <input matInput type="number" placeholder="Insira uma idade" formControlName="age">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Telefone: </mat-label>
+            <input matInput type="number" placeholder="Insira um número de telefone" formControlName="phone">
+        </mat-form-field>
+
+        <div class="send">
+            <button mat-raised-button (click)="closeDialog()">Fechar</button>
+            <button type="submit" mat-raised-button color="primary" (click)="updateItem()" [disabled]="itemForm.invalid">Atualizar</button>
+        </div>
+    </form>
+</div>

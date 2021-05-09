@@ -1,0 +1,46 @@
+<table mat-table [dataSource]="list">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let element"> {{element?.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Idade </th>
+    <td mat-cell *matCellDef="let element"> {{element?.age}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef> Telefone </th>
+    <td mat-cell *matCellDef="let element"> {{element?.phone}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let row">
+      <button (click)="editPerson(row)" mat-icon-button matTooltip="Editar" [matTooltipPosition]="'above'">
+        <mat-icon color="link">edit</mat-icon>
+      </button>
+      <button (click)="deletePerson(row)" mat-icon-button matTooltip="Excluir" [matTooltipPosition]="'above'">
+        <mat-icon color="link">delete</mat-icon>
+      </button>
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<div class="float">
+  <button 
+    mat-fab color="primary" 
+    matTooltip="Adicionar novo item"
+    (click)="addPerson()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

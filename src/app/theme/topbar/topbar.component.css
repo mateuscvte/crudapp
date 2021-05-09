@@ -1,0 +1,15 @@
+mat-toolbar {
+  top: 0 !important;
+  height: 64px;
+  position: fixed;
+  width: 100%  !important;
+  z-index: 99999;
+}
+
+mat-toolbar .links-router {
+  float: right;
+}
+.links-router button {
+  border-color:transparent !important;
+  margin: 3%;
+}
